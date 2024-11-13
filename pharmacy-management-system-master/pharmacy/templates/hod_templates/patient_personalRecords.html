@@ -1,0 +1,66 @@
+{% extends 'hod_templates/base_template.html'%} {% block main_content %}
+<div class="content">
+    <div class="row pt">
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Patient Image
+                </div>
+                <div class="card-body d-flex justify-content-center">
+                    <img src="{{patient.profile_pic.url}}" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Patient's Information
+                </div>
+                <div class="card-body">
+                    <tbody>
+                        <tr>  
+                            <td>ID: {{patient.admin.id}}</td>
+                            <br>
+                            <td>User Name: {{patient.admin.username}}</td>
+                            <br>
+                            <td>Full Name: {{patient.first_name}} {{patient.last_name}}</td>
+                            <br>
+                            <td>Email: {{ patient.admin.email }}</td>
+                            <br>
+                            <td>Dob: {{ patient.dob }}</td>
+                            <br>
+                            <td>Gender: {{ patient.gender }}</td>
+                            <br>
+                            <td>Address: {{ patient.address }}</td>
+                            <br>
+                            <td>Tel: {{ patient.phone_number }}</td>
+                        </tr>
+                    </tbody>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Patient's Info
+                </div>
+                <div class="card-body">
+                    <h6>Joined: {{patient.admin.date_joined}}</h6>
+                    <h6>Last Login: {{patient.admin.last_login}}</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Patient's Medical Info
+                </div>
+                <div class="card-body">
+                    <h6>Prescribed Doctor: {{user.first_name}}</h6>
+                    <h6>Prescribed drugs: {{prescription.prescribe}}</h6>
+                    <h6>Date Prescribed: {{prescrip.patient_dispen}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

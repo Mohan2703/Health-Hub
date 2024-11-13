@@ -1,0 +1,14 @@
+{% extends 'hod_templates/base_template.html'%} {% block page_title %} {% endblock page_title %} {% block main_content %}
+<div class="small-container card p-4 ml-5" style='width:600px; background-color: black; text-align: center;'>
+    <form action="" method="POST" style="color: white; background-color: black;">
+        {% csrf_token %}
+
+        <legend style="background-color: #121642; color: white; text-align: center;"><h1>~DELETE~</h1></legend>
+        <h2>Are You sure you want to delete Details ?</h2>
+        <button type="submit" class="btn btn-danger text-dark" style="font-weight: bold;"><i class="fas fa-trash" style="color: black;"></i> Yes, Delete</button>
+        <a href="javascript:history.back()" class="btn btn-outline-secondary" style="background-color: gray; color: white; font-weight: bold;">Cancel <i class="fas fa-times-circle" style="color: lightgreen;"></i></a>
+        <!-- <a href="./" class="btn btn-outline-secondary">Cancel</a> -->
+        <br>
+    </form>
+</div>
+{% endblock %}
