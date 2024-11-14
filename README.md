@@ -2,7 +2,7 @@
 <h2><b><i>Before getting into the project go through README file once.</i></b></h2>
 
    <p>This is a simple Pharmacy Management System programmed using Python Django. This project has user-friendly functionalities.<br>
-   <span>************************************</span>
+   <p>************************************</p><br>
    The system has 5 types of users:<br>
       1. Administrator.<br>
       2. Pharmacist.<br>
@@ -92,9 +92,9 @@ Password : 1234<br>
 
 -----------------------------------------------------------------------------------
 
-N/B: When adding New patient there are some validations in filling the forms 
-     For easy filling of forms use fake filler extension in chrome 
-     Fake Filler Extension Chrome link:https://chrome.google.com/webstore/detail/fake-filler/bnjjngeaknajbdcgpfkgnonkmififhfo
+NOTE: When adding New patient there are some validations in filling the forms :-
+     - For easy filling of forms use fake filler extension in chrome 
+     - Fake Filler Extension Chrome link:https://chrome.google.com/webstore/detail/fake-filler/bnjjngeaknajbdcgpfkgnonkmififhfo
 
 --------------------------------------------------------------------------------------
 # pharmacy-management-system-main
