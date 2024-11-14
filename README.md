@@ -1,7 +1,7 @@
 # 🏥Pharmacy Dispensing Management System || Python Django
 <h2><b><i>Before getting into the project go through README file once.</i></b></h2>
 
-   <p>This is a simple Pharmacy Management System programmed using Python Django. The system has 5 types of users are the Administrator, Pharmacist, Doctor, and Receptionist(pharmacyClerk) and Patient.This project has user-friendly functionalities.</p>
+   <p>This is a simple Pharmacy Management System programmed using Python Django. The system has 5 types of users are the Administrator, Pharmacist, Doctor, and Receptionist(Clerk) and Patient.This project has user-friendly functionalities.</p>
 
 <div> <img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Admin%20Login.png" width="400" height="200" />
 <img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Pharmacist.png" width="400" height="200" />
@@ -67,11 +67,11 @@ Password : 1234<br>
         
 
 -------------------------------------------------------------------------------------
-### PharmacyClerk Login:
+### Clerk Login:
 - Username: clerk
 - password: 1234
 
-        Receptionist Main Features
+        Clerk/Receptionist Main Features
      - Manage Admissions/Patients
      - Manage Personal Account
 
