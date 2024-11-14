@@ -2,7 +2,8 @@
 <h2><b><i>Before getting into the project go through README file once.</i></b></h2>
 
    <p>This is a simple Pharmacy Management System programmed using Python Django. This project has user-friendly functionalities.<br>
-      The system has 5 types of users:<br>
+   <span>************************************</span>
+   The system has 5 types of users:<br>
       1. Administrator.<br>
       2. Pharmacist.<br>
       3. Doctor.<br>
