@@ -1,5 +1,5 @@
 # 🏥Pharmacy Dispensing Management System || Python Django
-<h2><b><i>Before getting into the project go through README file once.</i></b></h2>
+<h2><b><i>Before getting into the project go through this README file once.</i></b></h2>
 
    <p>This is a simple Pharmacy Management System programmed using Python Django. This project has user-friendly functionalities.<br>
    ************************************<br>
@@ -34,30 +34,29 @@
 - Username: admin
 - password: 1234  
   
-### Administrator Main Features
+         Administrator Main Features
      - Manage Admissions/Patients
      - Manage System Users
      - Manage Patient's Prescription
      - Manage Medicinal Drugs Categories
      - Manage Medicinal Drugs
      - Manage Stocks
-     - Dispense Medicinal Drug
      - Manage Personal Account
 
-### To Create own Admin/Superuser
-#### run these commands in terminal.
+### To Create your own Admin/Superuser
+#### Run these commands in the terminal.
     python manage.py createsuperuser
-Username : admin<br>
-Password : 1234<br>
+Username: admin<br>
+Password: 1234<br>
 
 ------------------------------------------------------------------------------------
 ### Patient Login:
 - Username: patient
 - password: 1234
 
-        Patient Main Featues
+        Patient Main Features
      - Manage his/her medications
-     - Feedback Pharmacist incase of dispensing issue
+     - Feedback Pharmacist in case of dispensing issue
      - Manage Personal Account
 
 -----------------------------------------------------------------------------------
@@ -69,7 +68,7 @@ Password : 1234<br>
      - Manage Medicinal Drugs
      - Manage Stocks
      - Dispense Medicinal Drug
-     - Manage Patient Feedback messeges
+     - Manage Patient Feedback messages
      - Manage Personal Account
 
 -------------------------------------------------------------------------------------
@@ -86,13 +85,13 @@ Password : 1234<br>
 - Username: doctor
 - password: 1234
         
-        Doctor Main Featues
+        Doctor Main Features
      - Manage Patient's Prescription
      - Manage Personal Account
 
 -----------------------------------------------------------------------------------
 
-NOTE: When adding New patient there are some validations in filling the forms...
+NOTE: When adding a New patient there are some validations in filling the forms...
 - For easy filling of forms use fake filler extension in chrome 
 - Fake Filler Extension Chrome link:https://chrome.google.com/webstore/detail/fake-filler/bnjjngeaknajbdcgpfkgnonkmififhfo
 
