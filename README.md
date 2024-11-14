@@ -19,7 +19,6 @@
      pip install -r requirements.txt
 ### Step 2
      python manage.py migrate
-        
 ### Step 3
      python manage.py runserver
 -----------------------------------------------------------------------------------
@@ -39,18 +38,18 @@
      - Dispense Medicinal Drug
      - Manage Personal Account
 
-### To Create Admin 
-
-python manage.py createsuperuser
-Username : admin, owner
-Password : 12345678
+### To Create own Admin/Superuser
+#### run these commands in terminal.
+python manage.py createsuperuser<br>
+Username : admin<br>
+Password : 1234<br>
 
 ------------------------------------------------------------------------------------
 ### Patient Login:
 - Username: patient1
 - password: 1234
 
-           Patient Main Featues
+        Patient Main Featues
      - Manage his/her medications
      - Feedback Pharmacist incase of dispensing issue
      - Manage Personal Account
@@ -75,7 +74,7 @@ Password : 12345678
 - Username: pharmacyclerk1
 - password: 1234
 
-            Receptionist Main Features
+        Receptionist Main Features
      - Manage Admissions/Patients
      - Manage Personal Account
 
