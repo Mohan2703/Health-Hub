@@ -1,21 +1,22 @@
 # 🏥Pharmacy Dispensing Management System || Python Django
 <h2><b><i>Before getting into the project go through README file once.</i></b></h2>
 
-   <p>This is a simple Pharmacy Management System programmed using Python Django. <br>
-      The system has 5 types of users :<br>
-      1. Administrator,<br>
-      2. Pharmacist,<br>
-      3. Doctor,<br>
-      4. Clerk,<br>
-      5. Patient.<br>
-      This project has user-friendly functionalities.</p>
+   <p>This is a simple Pharmacy Management System programmed using Python Django. This project has user-friendly functionalities.<br>
+      The system has 5 types of users:<br>
+      1. Administrator.<br>
+      2. Pharmacist.<br>
+      3. Doctor.<br>
+      4. Clerk.<br>
+      5. Patient.</p>
 
-<div> <img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Admin%20Login.png" width="400" height="200" />
+<div>
+<img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Admin%20Login.png" width="400" height="200" />
 <img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Pharmacist.png" width="400" height="200" />
 </div>
-<div> <img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Doctor%20Login.png" width="400" height="200" />
+<div>
+<img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Doctor%20Login.png" width="400" height="200" />
 <img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Receptionist%20Login.png" width="400" height="200" />
-    <img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Patient%20login.png" width="400" height="200" />
+<img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Patient%20login.png" width="400" height="200" />
 </div>
 
 ## Run these Commads
@@ -57,8 +58,7 @@ Password : 1234<br>
      - Manage his/her medications
      - Feedback Pharmacist incase of dispensing issue
      - Manage Personal Account
-      
- 
+
 -----------------------------------------------------------------------------------
 ### Pharmacist Login:
 - Username: pharmacist
@@ -70,8 +70,6 @@ Password : 1234<br>
      - Dispense Medicinal Drug
      - Manage Patient Feedback messeges
      - Manage Personal Account
-     
-        
 
 -------------------------------------------------------------------------------------
 ### Clerk Login:
@@ -90,7 +88,7 @@ Password : 1234<br>
         Doctor Main Featues
      - Manage Patient's Prescription
      - Manage Personal Account
-   
+
 -----------------------------------------------------------------------------------
 
 N/B: When adding New patient there are some validations in filling the forms 
