@@ -363,7 +363,7 @@ textarea[resize='horizontal'] {
 } */
 
 .navbar-nav span {
-    color: #525f7f !important;
+    /* color: #525f7f !important; */
     margin-right: 10px !important;
 }
 
