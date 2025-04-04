@@ -10,8 +10,8 @@ from .models import *
 @login_required
 def patientHome(request):
     patient_obj = Patients.objects.get(admin=request.user.id)
-
     patient_dispen=patient_obj.dispense_set.all().count()
+    
     context={
           "total_disp":patient_dispen
     }
@@ -22,14 +22,14 @@ def patientHome(request):
 def patientProfile(request):
     customuser = CustomUser.objects.get(id=request.user.id)
     patien = Patients.objects.get(admin=customuser.id)
+   
     form=PatientPicForm1()
     if request.method == "POST":
-
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         address = request.POST.get('address')
-
+        # mobile = request.Post.get('phone_number')
         customuser = CustomUser.objects.get(id=request.user.id)
         customuser.first_name = first_name
         customuser.last_name = last_name
@@ -38,10 +38,11 @@ def patientProfile(request):
         patien = Patients.objects.get(admin=customuser.id)
         form=PatientPicForm1(request.POST,request.FILES,instance=patien)
         patien.address = address
-        
+        # patien.phone_number = mobile
+        patien.save()
         if form.is_valid():
             form.save()
-        patien.save()
+        
         messages.success(request, "Profile Updated Successfully")
         return redirect('patient_profile')
 
@@ -68,7 +69,7 @@ def myPrescriptionDelete(request):
     precrip=patient_obj.prescription_set.all()
     if request.method == "POST":
         precrip.delete()
-
+        
     context={
         "prescrips":precrip,
     }
@@ -78,7 +79,6 @@ def myPrescriptionDelete(request):
 def patient_feedback(request):
     patient_fed = Patients.objects.get(admin=request.user.id)
     feedback = PatientFeedback.objects.filter(patient_id=patient_fed)
-    
     context = {
         "feedback":feedback
     }

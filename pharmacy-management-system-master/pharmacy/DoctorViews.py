@@ -8,10 +8,9 @@ from .models import *
 
 def doctorHome(request): 
     prescip = Prescription.objects.all().count()
-
+    
     context={
         "Prescription_total":prescip
-
     }
     return render(request,'doctor_templates/doctor_home.html',context)
 
@@ -23,6 +22,8 @@ def doctorProfile(request):
     if request.method == 'POST':
         first_name=request.POST.get('first_name')
         last_name=request.POST.get('last_name')
+        address = request.POST.get('address')
+        mobile=request.POST.get('mobile')
 
         customuser=CustomUser.objects.get(id=request.user.id)
         customuser.first_name=first_name
@@ -30,8 +31,10 @@ def doctorProfile(request):
         customuser.save()
         staff=Doctor.objects.get(admin=customuser.id)
         form =DoctorForm(request.POST,request.FILES,instance=staff)
-        staff.save()
 
+        staff.address = address
+        staff.mobile = mobile
+        staff.save()
         if form.is_valid():
             form.save()
         messages.success(request, "Profile Updated Successfully")
@@ -41,7 +44,6 @@ def doctorProfile(request):
         "staff":staff,
         "user":customuser
     }
-
     return render(request,'doctor_templates/doctor_profile.html',context)
 
 def managePatients(request):
@@ -49,7 +51,6 @@ def managePatients(request):
 
     context={
         "patients":patients,
-
     }
     return render(request,'doctor_templates/manage_patients.html',context)
 
@@ -67,9 +68,6 @@ def addPrescription(request,pk):
             messages.error(request,'Prescription Not Added')
             return redirect('manage_patient-doctor')
 
-
- 
-    
     context={
         "form":form
     }
@@ -82,13 +80,11 @@ def patient_personalDetails(request,pk):
     context={
         "patient":patient,
         "prescription":prescrip
-
     }
     return render(request,'doctor_templates/patient_personalRecords.html',context)
 
 def deletePrescription(request,pk):
     prescribe=Prescription.objects.get(id=pk)
-
     if request.method == 'POST':
         try:
             prescribe.delete()
@@ -98,21 +94,15 @@ def deletePrescription(request,pk):
             messages.error(request,'Prescription Not Deleted successfully')
             return redirect('manage_precrip_doctor')
 
-
-
-
     context={
         "patient":prescribe
     }
-
     return render(request,'doctor_templates/sure_delete.html',context)
     
 def managePrescription(request):
     precrip=Prescription.objects.all()
-
     patient = Patients.objects.all()
     
-       
     context={
         "prescrips":precrip,
         "patient":patient
@@ -122,11 +112,8 @@ def managePrescription(request):
 def editPrescription(request,pk):
     prescribe=Prescription.objects.get(id=pk)
     form=PrescriptionForm(instance=prescribe)
-
-    
     if request.method == 'POST':
         form=PrescriptionForm(request.POST ,instance=prescribe)
-
         try:
             if form.is_valid():
                 form.save()
@@ -137,13 +124,9 @@ def editPrescription(request,pk):
             messages.error(request,' Error!! Prescription Not Updated')
             return redirect('manage_precrip_doctor')
 
-
-
-
     context={
         "patient":prescribe,
         "form":form
     }
-
     return render(request,'doctor_templates/edit_prescription.html',context)
     

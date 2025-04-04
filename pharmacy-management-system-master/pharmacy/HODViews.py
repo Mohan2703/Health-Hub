@@ -445,8 +445,8 @@ def deletePharmacyClerk(request,pk):
 
 def editPharmacist(request,staff_id):
     staff = Pharmacist.objects.get(admin=staff_id)
-    if request.method == "POST":
-        
+    
+    if request.method == "POST":    
         username = request.POST.get('username')
         email = request.POST.get('email')
         first_name = request.POST.get('first_name')
@@ -454,26 +454,30 @@ def editPharmacist(request,staff_id):
         address = request.POST.get('address')
         mobile = request.POST.get('mobile')
 
-        # INSERTING into Customuser Model
-        user = CustomUser.objects.get(id=staff_id)
-        user.username = username
-        user.first_name = first_name
-        user.last_name = last_name
-        user.email = email
-        user.save()
+        try:
+            # INSERTING into Customuser Model
+            user = CustomUser.objects.get(id=staff_id)
+            user.username = username
+            user.first_name = first_name
+            user.last_name = last_name
+            user.email = email
+            user.save()
         
-        # INSERTING into Staff Model
-        staff = Pharmacist.objects.get(admin=staff_id)
-        staff.address = address
-        staff.mobile = mobile
-        staff.save()
-        messages.success(request, "Pharmacist Details Updated.")
-        return redirect('manage_pharmacist')
+            # INSERTING into Staff Model
+            staff = Pharmacist.objects.get(admin=staff_id)
+            staff.address = address
+            staff.mobile = mobile
+            staff.save()
+            messages.success(request, "Pharmacist Details Updated.")
+            return redirect('manage_pharmacist')
+        except:
+            messages.success(request,'An Error Was Encounterd Pharmacist Not Updated')
+            return redirect('manage_pharmacist')
     
     context = {
         "staff": staff,
         "id": staff_id,
-        'title':"Edit Pharmacist "
+        'title':"Edit Pharmacist"
     }
     return render(request, "hod_templates/edit_pharmacist.html", context)
 
@@ -532,7 +536,7 @@ def editPharmacyClerk(request,clerk_id):
             user.last_name=last_name
             user.save()
 
-            clerk =PharmacyClerk.objects.get(admin=clerk_id)
+            clerk = PharmacyClerk.objects.get(admin=clerk_id)
             clerk.address=address
             clerk.mobile=mobile
             clerk.gender=gender

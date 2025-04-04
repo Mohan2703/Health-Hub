@@ -27,41 +27,36 @@ def receptionistProfile(request):
 
     form=ClerkForm()
     if request.method == "POST":
-       
-
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         password = request.POST.get('password')
         address = request.POST.get('address')
-        phone_number=request.POST.get('phone_number')
+        mobile=request.POST.get('mobile')
 
-      
         customuser = CustomUser.objects.get(id=request.user.id)
         customuser.first_name = first_name
         customuser.last_name = last_name
         customuser.save()
-
         staff = PharmacyClerk.objects.get(admin=customuser.id)
         form=ClerkForm(request.POST,request.FILES,instance=staff)
 
         staff.address = address
-        staff.phone_number=phone_number
+        staff.mobile = mobile
         staff.save()
         if form.is_valid():
             form.save()
-        
-
+        staff.save()
+        messages.success(request, "Profile Updated Successfully")
+        return redirect('clerk_profile')
+    
     context={
         "form":form,
         "staff":staff,
         'user':customuser
     }
-      
-
     return render(request,'clerk_templates/clerk_profile.html',context)
 
 
-    
 @login_required
 def createPatient(request):
     form=PatientForm(request.POST, request.FILES)
@@ -92,7 +87,7 @@ def createPatient(request):
             
     except:
         
-        messages.error(request,'Patient Not Saved')
+        messages.error(request,'Patient Already Exists or an error occured.')
         return redirect('patient_form2')
     context={
         "form":form

@@ -10,6 +10,7 @@ from django.contrib.auth.signals import user_logged_in, user_logged_out
 from django.core.cache import cache 
 from django.db.models import BooleanField, ExpressionWrapper, Q
 from django.db.models.functions import Now
+from django.contrib.auth.models import User
 
 
 class CustomUser(AbstractUser):
@@ -68,7 +69,7 @@ class Pharmacist(models.Model):
     age= models.IntegerField(default='0', blank=True, null=True)
     gender=models.CharField(max_length=7,null=True,blank=True,choices=gender_category)
     mobile =models.CharField(max_length=10,null=True,blank=True)
-    address=models.CharField(max_length=300,null=True,blank=True)
+    address=models.CharField(max_length=255,null=True,blank=True)
     profile_pic=models.ImageField(default="images2.png",null=True,blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -30,26 +30,28 @@ def pharmacistHome(request):
 
 @login_required
 def userProfile(request):
-    staff=Pharmacist.objects.all()
-    form=CustomerForm()
+    customuser = CustomUser.objects.get(id=request.user.id)
+    staff = Pharmacist.objects.get(admin=customuser.id)
+    form = CustomerForm(instance=staff)
+    
     if request.method == "POST":
        
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
-        password = request.POST.get('password')
         address = request.POST.get('address')
+        mobile=request.POST.get('mobile')
 
-        customuser = CustomUser.objects.get(id=request.user.id)
         customuser.first_name = first_name
         customuser.last_name = last_name
         customuser.save()
-        staff = Pharmacist.objects.get(admin=customuser.id)
-        form=CustomerForm(request.POST,request.FILES,instance=staff)
+        
         staff.address = address
+        staff.mobile = mobile
+        staff.save()
+        form=CustomerForm(request.POST,request.FILES,instance=staff)
         
         if form.is_valid():
             form.save()
-        staff.save()
         messages.success(request, "Profile Updated Successfully")
         return redirect('pharmacist_profile')
 
@@ -91,7 +93,8 @@ def manageStock(request):
     
     context = {
         "stocks": stocks,
-                "expired":ex,
+        "expired":ex,
+        "expa":eo
     }
     return render(request,'pharmacist_templates/manage_stock.html',context)
 
@@ -145,9 +148,8 @@ def manageDispense(request,pk):
             # "stocks":stock,
             "drugs":drugs,
             "prescrips":prescrips,
-"expired":ex,
-"expa":eo,
-
+            "expired":ex,
+            "expa":eo,
             }
         if request.method == 'POST':
         
@@ -159,7 +161,6 @@ def manageDispense(request,pk):
                 "patients":queryset,
                 "expired":ex,
                 "expa":eo,
-
             }
     except:
         messages.error(request, "Dispensing Not Allowed! The Drug is Expired ,please contanct the admin for re-stock ")
@@ -230,77 +231,6 @@ def deleteDispense4(request,pk):
     return render(request,'pharmacist_templates/sure_delete.html')
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # # def dispenseDrug(request,pk):
 # #     queryset=Patients.objects.get(id=pk)
 # #     form=DispenseForm(initial={'patient_id':queryset})
@@ -308,8 +238,7 @@ def deleteDispense4(request,pk):
 # #         form=DispenseForm(request.POST or None)
 # #         if form.is_valid():
 # #             form.save()
-            
-    
+   
 # #     context={
 # #         # "title":' Issue' + str(queryset.item_name),
 # #         "queryset":queryset,
@@ -325,9 +254,6 @@ def deleteDispense4(request,pk):
 # #     }
 # #     return render(request,'pharmacist_templates/manage_dispense.html',context)
 
-
-
-
 # def dispense(request,pk):
 #     queryset=Stock.objects.get(id=pk)
 #     form=DispenseForm2(request.POST or None,instance=queryset)
@@ -337,11 +263,8 @@ def deleteDispense4(request,pk):
 #         print(instance.drug_id.quantity)
 #         print(instance.dispense_quantity)
 #         instance.save()
-
 #         return redirect('pharmacist_disp')
 
-       
-    
 #     context={
 #         "queryset":queryset,
 #         "form":form,

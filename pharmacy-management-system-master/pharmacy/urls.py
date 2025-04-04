@@ -2,6 +2,7 @@ from django.urls import path
 from .import HODViews
 from .import pharmacistViews,DoctorViews,views,patient_view,clerkViews
 from django.contrib.auth import views as auth_views
+from .import views
 
 
 urlpatterns=[
@@ -90,14 +91,16 @@ urlpatterns=[
 
 
   
-    path('reset_password/',auth_views.PasswordResetView.as_view(template_name="password_reset.html"),name="reset_password"),
+    path('reset_password/',auth_views.PasswordResetView
+    .as_view(template_name="password_reset_form.html"),name="reset_password"),
 
     path('reset_password_sent/',auth_views.PasswordResetDoneView
-    .as_view(template_name="password_reset_sent.html"),name="password_reset_done"),
+    .as_view(template_name="password_reset_done.html"),name="password_reset_done"),
     
     path('reset/<uidb64>/<token>/',auth_views.PasswordResetConfirmView
-    .as_view(template_name="password_reset_form.html"),name="password_reset_confirm"),
+    .as_view(template_name="password_reset_confirm.html"),name="password_reset_confirm"),
 
    path('reset_password_complete/',auth_views.PasswordResetCompleteView
-    .as_view(template_name="password_reset_done.html"),name="password_reset_complete"),
+    .as_view(template_name="password_reset_complete.html"),name="password_reset_complete"),
+   
 ]

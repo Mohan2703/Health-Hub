@@ -35,6 +35,10 @@ def loginPage(request):
             return redirect('login')
     return render(request,'login.html')
 
+def reset_password_view(request):
+    # Logic for resetting the password
+    return render(request, 'reset_password.html')
+
 def logoutUser(request):
     logout(request)
     return redirect('login')
