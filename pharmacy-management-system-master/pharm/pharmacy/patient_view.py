@@ -3,7 +3,6 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .decorators import *
 from django.contrib.auth.decorators import login_required
-
 from .forms import *
 from .models import *
 
@@ -31,8 +30,6 @@ def patientProfile(request):
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         address = request.POST.get('address')
-
-      
         customuser = CustomUser.objects.get(id=request.user.id)
         customuser.first_name = first_name
         customuser.last_name = last_name
@@ -76,14 +73,11 @@ def myPrescriptionDelete(request):
     precrip=patient_obj.prescription_set.all()
     if request.method == "POST":
         precrip.delete()
-
-
-
-
     context={
         "prescrips":precrip,
     }
     return render(request,'patient_templates/sure_delete.html',context)
+
 
 def patient_feedback(request):
     patient_fed = Patients.objects.get(admin=request.user.id)
@@ -98,8 +92,6 @@ def patient_feedback_save(request):
     if request.method == "POST":
         feedback = request.POST.get('feedback_message')
         staff_obj = Patients.objects.get(admin=request.user.id)
-
-     
         add_feedback =PatientFeedback(patient_id=staff_obj, feedback=feedback, feedback_reply="")
         add_feedback.save()
         messages.success(request, "Feedback Sent.")
@@ -112,24 +104,16 @@ def Patientdeletefeedback(request,pk):
             fed.delete()
             messages.success(request, "Feedback  deleted successfully")
             return redirect('patient_feedback')
-
     except:
         messages.error(request, "Feedback Error, Please Check again")
         return redirect('patient_feedback')
-
-
-   
     return render(request,'patient_templates/sure_delete.html')
 
 
 def patient_dispense3(request):
     patient_obj = Patients.objects.get(admin=request.user.id)
-
     patient_dispen=patient_obj.dispense_set.all()
-
     context={
         "dispense":patient_dispen
     }
     return render(request, "patient_templates/patient_dispense.html", context)
-
-

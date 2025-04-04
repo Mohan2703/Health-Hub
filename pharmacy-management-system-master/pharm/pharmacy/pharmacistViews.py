@@ -126,10 +126,7 @@ def manageDispense(request,pk):
                 username = form.cleaned_data['taken']
                 qu=form.cleaned_data['dispense_quantity']
                 ka=form.cleaned_data['drug_id']
-                # print(username)
-            
-            
-                    
+                # print(username) 
                 stock= eo=Stock.objects.annotate(
                 expired=ExpressionWrapper(Q(valid_to__lt=Now()), output_field=BooleanField())
                 ).filter(expired=False).get(id=username)
@@ -138,18 +135,13 @@ def manageDispense(request,pk):
                 # print(instance)
                 instance.quantity-=qu
                 instance.save()
-
                 form=DispenseForm(request.POST or None ,initial={'patient_id':queryset})
                 form.save()
-
                 messages.success(request, "Drug Has been Successfully Dispensed")
-
                 return redirect('manage_patient_pharmacist')
             else:
                 messages.error(request, "Validty Error")
-
                 return redirect('manage_patient_pharmacist')
-
         context={
             "patients":queryset,
             "form":form,
@@ -158,10 +150,8 @@ def manageDispense(request,pk):
             "prescrips":prescrips,
 "expired":ex,
 "expa":eo,
-
             }
         if request.method == 'POST':
-        
             print(drugs)
             context={
                 "drugs":drugs,
@@ -170,7 +160,6 @@ def manageDispense(request,pk):
                 "patients":queryset,
                 "expired":ex,
                 "expa":eo,
-
             }
     except:
         messages.error(request, "Dispensing Not Allowed! The Drug is Expired ,please contanct the admin for re-stock ")
@@ -183,9 +172,7 @@ def manageDispense(request,pk):
             "prescrips":prescrips,
 "expired":ex,
 "expa":eo,
-
             }
-    
     return render(request,'pharmacist_templates/manage_dispense.html',context)
 
 
@@ -197,6 +184,7 @@ def patient_feedback_message(request):
     }
     return render(request, 'pharmacist_templates/patient_feedback.html', context)
 
+
 @csrf_exempt
 def patient_feedback_message_reply(request):
     feedback_id = request.POST.get('id')
@@ -206,7 +194,6 @@ def patient_feedback_message_reply(request):
         feedback.feedback_reply = feedback_reply
         feedback.save()
         return HttpResponse("True")
-
     except:
         return HttpResponse("False")
 
@@ -217,27 +204,18 @@ def deletefeedback(request,pk):
             fed.delete()
             messages.success(request, "Feedback  deleted successfully")
             return redirect('patient_feedback_message')
-
     except:
         messages.error(request, "Feedback Error, Please Check again")
         return redirect('patient_feedback_message')
-
-
-   
     return render(request,'pharmacist_templates/sure_delete.html')
     
-
-
-
+    
 def drugDetails(request,pk):
     stocks=Stock.objects.get(id=pk)
     context={
         "stocks":stocks,
-       
-
     }
     return render(request,'pharmacist_templates/view_drug.html',context)
-
 
 
 def deleteDispense4(request,pk):
@@ -255,77 +233,6 @@ def deleteDispense4(request,pk):
 
    
     return render(request,'pharmacist_templates/sure_delete.html')
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # # def dispenseDrug(request,pk):
