@@ -3,9 +3,9 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card card-body">
-                <a href="" class="btn btn-warning"> &#8592; Back to Profile  </a>
+                <a href="{% url 'clerk_home' %}" class="btn btn-warning"> &#8592; Back to Home  </a>
                 <hr>
-                <h3 style="text-align:center;">Account Settings</h3>
+                <h3 style="text-align:center; color: black;">Account Settings</h3>
                 <hr>
                 <div class="profile-sidebar">
                     <div class="profile-userpic">
@@ -111,7 +111,7 @@
                                 <div class="col-lg-3">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-city">Mobile</label>
-                                        <input type="text" id="input-city" name="mobile" class="form-control" placeholder="City" value="{{staff.mobile}}">
+                                        <input type="text" id="input-city" name="mobile" pattern="\d{10}" maxlength="10" class="form-control" placeholder="mobile" value="{{staff.mobile}}">
                                     </div>
                                 </div>
                             </div>
@@ -129,9 +129,6 @@
                             <button type="submit" class="btn btn-primary">Update Profile</button>
                         </div>
                     </div>
-
-
-
                 </form>
             </div>
         </div>

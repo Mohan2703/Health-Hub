@@ -1,16 +1,23 @@
-{% extends 'patient_templates/base_template.html'%} {% block main_content %}
+{% extends 'patient_templates/base_template.html'%} 
+{% block page_title %}
+<h4>Profile</h4>
+{% endblock page_title %}
+{% block main_content %}
 <div class="content">
     <div class="row">
         <div class="col-md-4">
             <div class="card card-body">
-                <a href="" class="btn btn-warning"> &#8592; Back to Profile  </a>
+                <a href="{% url 'patient_home' %}" class="btn btn-warning"> &#8592; Back to Profile  </a>
                 <hr>
-                <h3 style="text-align:center;">Account Settings</h3>
+                <h3 style="text-align:center; color: black;">Account Settings</h3>
                 <hr>
                 <div class="profile-sidebar">
 
                     <div class="profile-userpic">
-                        <img src="{{request.user.patients.profile_pic.url}}" class="img-responsive" alt="">
+                        <a href="#" class="sm-submenu-with-image">
+                            <img src="{{request.user.patients.profile_pic.url}}" class="img-circle elevation-1" width="200" height="200" alt="">
+                            <div class="vl"></div>
+                        </a>                    
                     </div>
 
                     <div class="profile-usertitle">
@@ -61,20 +68,12 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
+
                                     <div class="form-group">
                                         <label class="form-control-label">Last Name </label>
                                         <input type="text" class="form-control" name="last_name" value="{{ patien.last_name }}">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label class="form-control-label">DOB </label>
-                                        <input type="text" name="dob" class="form-control" value="{{ patien.dob }}" disabled="disabled">
-                                    </div>
-                                </div>
-                                <!-- <div class="card-body doc">
-                                    <h5> DOB: <span>{{patien.dob}}</span> </h5>
-                                </div> -->
                             </div>
                         </div>
                         <hr class="my-4">
@@ -83,34 +82,27 @@
                             <div class="row">
                                 <div class="col-md-7">
                                     <div class="form-group focused">
-                                        <label class="form-control-label" for="input-address">Address</label>
+                                        <label class="form-control-label">Address</label>
                                         <input class="form-control" placeholder="Home Address" name="address" type="text" value="{{patien.address}}">
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <!-- <div class="col-lg-3">
                                     <div class="form-group focused">
-                                        <label class="form-control-label" for="input-city">Mobile</label>
-                                        <input type="text" id="input-city" name="mobile" class="form-control" placeholder="mobile" value="{{patien.phone_number}}">
+                                        <label class="form-control-label">Mobile</label>
+                                        <input type="text" class="form-control" name="mobile"  placeholder="mobile" value="{{patien.phone_number}}" disabled>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <input type="file" name="profile_pic" accept="image/*" id="id_profile_pic">
-
                                 </div>
                             </div>
-
                         </div>
-
-
                         <div class="card-footer mt-3">
                             <button type="submit" class="btn btn-primary">Update Profile</button>
                         </div>
                     </div>
-
-
-
                 </form>
             </div>
         </div>

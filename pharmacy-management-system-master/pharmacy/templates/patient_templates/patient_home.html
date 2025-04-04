@@ -17,7 +17,7 @@
               <div class="card" >
               <img src="https://png.pngtree.com/illustrations/20190322/ourlarge/pngtree-business-office-flat-character-meeting-png-image_37339.jpg"  style="height: 200px;"class="card-img-top" alt="...">
               <div class="card-body">
-                <h3 class="card-title py-2" style="font-size:26px; font-weight:700;">Hello, {{request.user}}</h3>
+                <h3 class="card-title py-2" style="font-size:26px; font-weight:700; color: black;">Hello, {{request.user}}</h3>
                   <!-- /.card-header -->
              
               </div>
@@ -37,7 +37,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'taken_home' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

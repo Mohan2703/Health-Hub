@@ -1,22 +1,17 @@
 {% extends 'pharmacist_templates/base_template.html'%}
 {% block page_title %}
-<h5>All patients</h5>
+<h5>Manage Disp</h5>
 {% endblock page_title %}
 
 {% block link %}
-<li class="breadcrumb-item active">all patients </li>
+<li class="breadcrumb-item active">all patients</li>
 {% endblock link %}
 
 {% block main_content %}
 <style>
     table {border-collapse:collapse;  width:310px;}
     table td { width:100px; word-wrap:break-word;}
-
-
-
-  
-
-    </style>
+</style>
 
 
 <section class="content">
@@ -47,55 +42,35 @@
         
                 <div class="col-md-12">
                        
-                    <div class="card card-primry  sc">
-                            <div class="card card-primar sc">
+                    <div class="card card-primary  sc">
+                            <div class="card card-primary sc">
                                     <div class="card-header">
                                         <span>Patiets Records</span>
                                        <div class="card-tools d-flex">
-                                           
-                                      
-                                    
-                    
                                 </div>
-                    
                                     </div>
                         <table class="table table-bordered table-hover dataTable" >
                             <thead>
                                     <tr>
                                             <th>ID</th>
                                             <th>Patient FullName</th>
-                                        
                                             <th>Dispensed Drug</th>
-
                                             <th>Dispensed Quantity</th>
                                             <th>Instructions</th>
                                             <th>Date Precribed</th>
-                                             
-                    
-                                             <th class="text-center">Action</th>
-                                            
-                
+                                            <th class="text-center">Action</th>
                                     </tr>
                             </thead>
                              <tbody>
                                     {% for prescrip in prescrips %}
                                        <tr class="hov">
-                                            <td>{{prescrip.id}}</td>
-                                       
-                                        <td>{{prescrip.patient_id.first_name}}  &nbsp;  &nbsp;  &nbsp;     {{prescrip.patient_id.last_name}}</td>
-
-                                
+                                        <td>{{prescrip.id}}</td>
+                                        <td>{{prescrip.patient_id.admin.first_name}} {{prescrip.patient_id.admin.last_name}}</td>
                                         <td>{{prescrip.drug_id}}</td>
                                         <td class="text-center pt-2">{{prescrip.dispense_quantity}}</td>
                                         <td>{{prescrip.instructions}}</td>
                                         <td>{{prescrip.dispense_at}}</td>
-                                        <td><a href="{% url 'del_disp' prescrip.id %}" class="btn btn-sm btn-danger">Delete</a>                     
-
-
-
-
-                
-                
+                                        <td><a href="{% url 'del_disp' prescrip.id %}" class="btn btn-sm btn-danger">Delete</a>
                                     </tr>
                                     {% endfor %}
                              </tbody>

@@ -44,21 +44,21 @@
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> Patient's Info
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="background-color: black;">
                     <h6>Joined: {{patient.admin.date_joined}}</h6>
                     <h6>Last Login: {{patient.admin.last_login}}</h6>
                 </div>
             </div>
-            <div class="card">
+            <!-- <div class="card">
                 <div class="card-header">
                     <i class="fa fa-align-justify"></i> Patient's Medical Info
                 </div>
-                <div class="card-body">
-                    <h6>Prescribed Doctor: {{user.first_name}}</h6>
+                <div class="card-body"  style="background-color: black;">
+                    <h6>Prescribed Doctor: {{patient.admin.staff.first_name}}</h6>
                     <h6>Prescribed drugs: {{prescription.prescribe}}</h6>
                     <h6>Date Prescribed: {{prescrip.patient_dispen}}</h6>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

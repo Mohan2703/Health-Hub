@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12 panel-header-oly">
                 <div class="profile-header d-flex align-items-center position-relative rounded overflow-hidden">
-                    <div class="position-absolute l-0 t-0 r-0 b-0 bs-c bp-c o-10" style="background: url(/static/images/profile-bg.jpg);"></div>
+                    <div class="position-absolute l-0 t-0 r-0 b-0 bs-c bp-c o-10" style="background: url(..static/images/profile-bg.jpg);"></div>
                     <div class="position-relative d-flex flex-wrap w-100">
                         <div class="flex-1 d-flex align-items-center px-4 my-3 w-100 w-lg-auto moo">
                             <div class="pr-6">
@@ -51,10 +51,11 @@
                             <div class="row">
                                 <div class="col-lg-12 col-xl-6 ">
                                     <div class="table-responsive ">
-                                        <table class="table m-0">
+                                        <table class="table m-0 table-primary table-bordered">
                                             <tbody>
-                                                <th scope="row">Full Name</th>
-                                                <td>{{user.first_name}} {{user.last_name}}</td>
+                                                <tr>
+                                                    <th scope="row">Full Name</th>
+                                                    <td>{{user.first_name}} {{user.last_name}}</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Gender</th>
@@ -62,7 +63,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Birth Date</th>
-                                                    <td>March 27th, 20002</td>
+                                                    <td>27/03/2002</td>
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">Location</th>

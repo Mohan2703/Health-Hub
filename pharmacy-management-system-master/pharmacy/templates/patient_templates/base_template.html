@@ -22,7 +22,6 @@
                         <span class="avatar-status avatar-sm-status avatar-status-success"></span>
                     </a>
                 </li>
-
                 <!-- Notifications Dropdown Menu -->
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown ml-3 low">
@@ -40,12 +39,8 @@
                         </a>
                         <div class="dropdown-divider"></div>
 
-
                     </div>
-
                 </li>
-
-
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -59,15 +54,16 @@
 
                 <div class="container-fluid">
                     <div class="row ">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" style="background-color: black; border: 2px solid white;">
                             <h1 class="m-0 text-dark">
                                 {% block page_title %} {% endblock page_title %}
                             </h1>
                         </div>
                         <!-- /.col -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" style="background-color: black; border: 2px solid white;">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'patient_home' %}">Home</a></li>
+                                {% block link %} {% endblock link %}
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -89,9 +85,5 @@
             $('.alert').fadeOut();
         }, 1500);
     </script>
-
-
-
-
 
     {% endblock htm %}

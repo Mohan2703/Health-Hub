@@ -26,6 +26,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Password</label>
@@ -39,6 +40,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="row">
                             <div class="col-md-4">
@@ -94,7 +96,9 @@
 								<i class="fas fa-phone"></i>
 								</span>
                                         </span>
-                                        <input type="text" class="form-control" name="mobile" pattern="\d{10}" maxlength="10" placeholder="Enter Phone Number" id="id_mobile">
+                                        <!-- <input type="text" class="form-control" name="mobile" pattern="\d{10}" maxlength="10" placeholder="Enter Phone Number" id="id_mobile"> -->
+                                        <input type="text" class="form-control" name="mobile" pattern="\d{10}" minlength="10" maxlength="10" placeholder="Enter Phone Number" id="id_mobile"
+                                        title="Please enter exactly 10 digits." required  oninput="this.value = this.value.replace(/\D/g, '').slice(0, 10);">
                                     </div>
                                 </div>
                             </div>

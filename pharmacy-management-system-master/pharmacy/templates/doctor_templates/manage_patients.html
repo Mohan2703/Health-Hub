@@ -1,50 +1,29 @@
 {% extends 'doctor_templates/base_template.html'%} {% block page_title %}
 <h5>All patients</h5>
 {% endblock page_title %} {% block link %}
-<li class="breadcrumb-item active">all patients </li>
+<li class="breadcrumb-item active" style="color: white;">all patients </li>
 {% endblock link %} {% block main_content %}
 
 <section class="content">
     <div class="row">
-
         <div class="col-md-12">
-
-            <div class="card card-primry  sc">
-                <div class="card card-primar sc">
+            <div class="card card-primary sc">
+                <div class="card card-primary sc">
                     <div class="card-header">
-                        <span>Patiets Records</span>
-                        <div class="card-tools d-flex">
-
-                            <form role="form" method="POST" action="" enctype="multipart/form-data" class="mr-4 mt-1">
-                                {% csrf_token %}
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="search" class="form-control float-right" placeholder="Search">
-
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-
-
-                        </div>
-
+                        <span>Patient Records</span>
                     </div>
-                    <table class="table table-bordered table-hover dataTable">
+                    
+                    <table class="table table-bordered table-hover dataTable" id="plist">
                         <thead>
                             <tr>
-                                <th>No.</th>
+                                <th>Sl.No.</th>
                                 <th>Image</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
+                                <th>Name</th>
+                                <!-- <th>LastName</th> -->
                                 <th>Gender</th>
                                 <th>Email</th>
-
                                 <th>Mobile</th>
-
                                 <th class="text-center">Action</th>
-
-
                             </tr>
                         </thead>
                         <tbody>
@@ -52,24 +31,18 @@
                             <tr class="hov">
                                 <td>{{forloop.counter}}</td>
                                 <td> <img src="{{patient.profile_pic.url}}" class="" width="35" height="35" alt=""></td>
-                                <td>{{patient.first_name}}</td>
-                                <td>{{patient.last_name}}</td>
+                                <td>{{patient.admin.first_name}} {{patient.admin.last_name}}</td>
+                                <!-- <td>{{patient.last_name}}</td> -->
                                 <td>{{patient.gender}}</td>
                                 <td>{{patient.admin.email}}</td>
                                 <td>{{patient.phone_number}}</td>
-
                                 <td><a href="{% url 'doctor_prescribe2' patient.id %}" class="btn btn-sm btn-warning">Prescribe</a>
-
-                                    <a href="{% url 'patient_record_doctor' patient.id %}" class="btn btn-sm btn-success">View</a></td>
-
-
+                                    <a href="{% url 'patient_record_doctor' patient.id %}" class="btn btn-sm btn-success">View</a>
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>
-
                     </table>
-
-
                 </div>
             </div>
         </div>

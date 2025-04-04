@@ -52,29 +52,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="col-md-6">
     <div class="card card-info">
             <div class="card-header">
@@ -86,43 +63,29 @@
                       </div>
             <table class="table table-bordered table-hover dataTable table5" id="plist">
                     <thead>
-
                 <tr>
                     <th>No</th>
                     <th>Drug</th>
                     <th>Category</th>
                     <th>Quantiy</th>
                     <th>Date Stocked</th>
-
-                    <!-- <th>Mobile</th>
-
-                     <th>Address</th> -->
-
                 </tr>
             </thead>
             {% for stoc in drugs %}
-
                    <tbody  id="japon">
                 <tr class="hov" data-id={{stoc.id}}>
                     <td>{{stoc.id}} &#160;</td>
                     <td>{{stoc.drug_name}} &#160;</td>
                     <td>{{stoc.category}}</td>
                     <td>{{stoc.quantity}}</td>
-
                     <td>{{stoc.last_updated |date:"F   d, Y"}}</td>
-                  
                     <!-- <td class="d-flex justify-content-center">
                             <a href="" class="btn btn-sm btn-success update-drug" data-stoc={{stoc.id}} data-stock={{stoc.drug_name}} data-action="add">Edit</a>
                             &nbsp; 
-                                   
-
                             </td> -->
                 </tr>
             </tbody>
             {% endfor %}
-
                   </table>
     </div>
-     
-
 </div>

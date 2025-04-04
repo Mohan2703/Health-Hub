@@ -1,13 +1,17 @@
-{% extends 'clerk_templates/base_template.html'%} {% block page_title %} {% endblock page_title %} {% block main_content %}
-<div class="small-container card p-4 ml-5" style='width:600px;'>
+{% extends 'clerk_templates/base_template.html'%} {% block page_title %} 
+<h4>Delete</h4>
+{% endblock page_title %} {% block main_content %}
+<div class="small-container card p-4 ml-5" style="margin-top: 50px; width:600px; background-color: black; border: 2px solid white;">
     <form action="" method="POST">
         {% csrf_token %}
 
 
-        <legend>Delete Patient </legend>
-        <h2>Are You sure you want to delete Details</h2>
-        <button type="submit" class="btn btn-danger text-dark">Yes, Delete</button>
-        <a href="" class="btn btn-outline-secondary text-dark">Cancel</a>
+        <legend style="border-radius: 10px; border: 2px solid white; background-color: #121642; color: white; text-align: center;"><h1>Delete Patient</h1></legend>
+        <br>
+        <h2>Are You sure you want to delete Patient Details ?</h2>
+        <br>
+        <button type="submit" class="btn btn-danger text-light" style="border: 2px solid white;"><i class="fas fa-trash" style="color: black;"></i> Yes, Delete</button> &nbsp; 
+        <a href="javascript:history.back()" class="btn btn-outline-secondary text-light" style="border: 2px solid white;">Cancel <i class="fas fa-times-circle" style="color: lightgreen;"></i></a>
         <br>
 
     </form>

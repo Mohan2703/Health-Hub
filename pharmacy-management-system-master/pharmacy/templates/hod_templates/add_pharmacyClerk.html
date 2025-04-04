@@ -9,7 +9,6 @@
                 <div class="card-header ">
                     <h3 class="card-title ">Add Clerk</h3>
                 </div>
-
                 <form method="POST" style="font-size:13px;" class='px-3 py-2'>
                     {% csrf_token %} {% include 'hod_templates/alert_messeges.html'%}
 
@@ -108,7 +107,6 @@
                     </div>
                     <div class="bg-light">
                         <input type="button" class="btn btn-info ml-4 mb-4" data-toggle="modal" data-target=".bd-example-modal-sm" value="Submit">
-
                 </form>
 
                 {% include 'hod_templates/confirm_submit.html'%}
@@ -117,4 +115,4 @@
             </div>
         </div>
 </section>
-x{% endblock main_content %}
+{% endblock main_content %}

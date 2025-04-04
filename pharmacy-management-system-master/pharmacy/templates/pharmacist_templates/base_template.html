@@ -9,7 +9,7 @@
                 </li>
             </ul>
 
-            <h4 style="margin-left: 10px; margin-top: 5px;"> Pharmacist Login</h4>
+            <h4 style="margin-left: 10px; margin-top: 5px;">Pharmacist Logged in! </h4>
 
             <ul class="navbar-nav ml-auto">
                 <li class="mx-3">
@@ -23,7 +23,7 @@
 
 
                 <li class="nav-item dropdown ml-3 low">
-                    <a href="#" class="btn btn-outlined btn-black text-muted bg-transparent " data-toggle="dropdown" aria-expanded="false" data-wow-delay="0.7s"><img src="https://img.icons8.com/ios/50/000000/settings.png" width="19" height="19">
+                    <a href="#" class="btn btn-outlined btn-black text-muted bg-transparent " data-toggle="dropdown" aria-expanded="false" data-wow-delay="0.7s"><img src="/static/images/settings.png" width="19" height="19">
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
 
@@ -53,14 +53,14 @@
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row ">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" style="background-color: black; border: 2px solid white;">
                             <h1 class="m-0 text-dark">
                                 {% block page_title %} {% endblock page_title %}
                             </h1>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6" style="background-color: black; border: 2px solid white;">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'pharmacist_home' %}">Home</a></li>
                             </ol>
                         </div>
                     </div>

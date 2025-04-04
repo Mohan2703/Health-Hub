@@ -31,11 +31,29 @@
         <div class="row">
                 <div class="col-md-4">
                         <div class="card card-body">
-                            <a href="" class="btn btn-warning"> &#8592; Back to Profile  </a>
+                            <a href="{% url 'pharmacist_home' %}" class="btn btn-warning"> &#8592; Back to Home </a>
                             <hr>
-                            <h3 style="text-align:center;">Account Settings</h3>
+                            <h3 style="text-align:center; color: black;">Account Settings</h3>
                             <hr>
-                            <img src="{{request.user.pharmacist.profile_pic.url}}" alt="" class="profile-pic">
+                            <div class="profile-sidebar">
+                                <div class="profile-userpic">
+                                    <a href="#" class="sm-submenu-with-image">
+                                        <img src="{{request.user.pharmacist.profile_pic.url}}" class="img-circle elevation-1" width="200" height="200" alt="">
+                                        <div class="vl"></div>
+                                    </a>
+                                </div>
+                                <div class="profile-usertitle">
+                                    
+                                    <div class="profile-usertitle-name">
+                                        {{request.user.first_name}} {{request.user.last_name}}
+                                    </div>
+                                    <div class="profile-usertitle-job">
+                                        Pharmacist
+                                    </div>
+                                </div>
+            
+                            </div>
+
                             <!-- <form action="" method="POST" >
                                 {% csrf_token%}
                                 <input class="btn btn-primary" type="submit" name='update Information'> 
@@ -52,9 +70,6 @@
                 <!-- form start -->
                 <form role="form" method="POST" action="{% url 'pharmacist_profile' %}" enctype="multipart/form-data">
                     {% csrf_token %}
-
-                    
-                        
 
                     <div class="card-body">
                         <div class="form-group">
@@ -77,26 +92,42 @@
                             <input type="text" class="form-control" name="last_name" value="{{ user.last_name }}">
                         </div>
 
-                        <!-- <div class="form-group">
-                            <label>Address </label>
-                            <textarea name="address" class="form-control" row="5">{{staff.address }}</textarea>
-                        </div> -->
-
-                        <input type="file" name="profile_pic" accept="image/*" id="id_profile_pic">
-
+                      
+                        <hr class="my-4">
+                        <h6 class="heading-small text-muted mb-1">Contact information</h6>
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="form-group focused">
+                                        <label class="form-control-label" for="input-address">Address</label>
+                                        <input class="form-control" placeholder="Home Address" name="address" type="text" value="{{ staff.address }}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group focused">
+                                        <label class="form-control-label" for="input-city">Mobile</label>
+                                        <input type="text" id="input-city" name="mobile" pattern="\d{10}" maxlength="10" class="form-control" placeholder="mobile" value="{{ staff.mobile }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="file" name="profile_pic" accept="image/*" id="id_profile_pic">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.card-body -->
 
                     <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
                     </div>
+
                 </form>
                 </div>
                 <!-- /.card -->
-
             </div>
         </div>
-
     </div><!-- /.container-fluid -->
   </section>
 {% endblock %}

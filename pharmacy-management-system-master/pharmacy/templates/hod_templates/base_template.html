@@ -14,7 +14,7 @@
             <h4 style="margin-left: 10px; margin-top: 5px;">Admin logged in! </h4>
             <ul class="navbar-nav ml-auto">
                 <li class="mx-3">
-                    <a href="#" class="sm-submenu-with-image a">
+                    <a href="{% url 'hod_profile' %}" class="sm-submenu-with-image a">
                         <span>{{user.first_name}}  {{user.last_name}}</span>
                         <img src="{{request.user.adminhod.profile_pic.url}}" class="img-circle elevation-1" width="40" height="40" alt="">
                         <span class="avatar-status avatar-sm-status avatar-status-success"></span>
@@ -24,11 +24,12 @@
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown ml-3 low">
 
-                    <a href="#" class="btn btn-outlined btn-black text-muted bg-transparent " data-toggle="dropdown" aria-expanded="false" data-wow-delay="0.7s"><img src="https://img.icons8.com/ios/50/000000/settings.png" width="19" height="19">
+                    <a href="" class="btn btn-outlined btn-black text-muted bg-transparent " data-toggle="dropdown" aria-expanded="false" data-wow-delay="0.7s">
+                        <img src="https://img.icons8.com/ios/50/000000/settings.png" width="19" height="19">
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
 
-                        <a href="{% url 'hod_profile' %}" class="dropdown-item">
+                        <a href="{% url 'edit-admin'  %}" class="dropdown-item">
                             <i class="fas fa-user-edit mr-2"></i> Update Profile
                         </a>
                         <div class="dropdown-divider"></div>
@@ -49,16 +50,17 @@
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
-                    <div class="row ">
-                        <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-6" style="background-color: black; border: 1px solid white;">
                             <h1 class="m-0 text-dark">
                                 {% block page_title %} {% endblock page_title %}
                             </h1>
                         </div>
                         <!-- /.col -->
-                        <div class="col-sm-6 ">
+                        <div class="col-sm-6" style="background-color: black; border: 1px solid white;">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href=" {% url 'admin_dashboard' %}">Home</a></li>
+                                {% block link %} {% endblock link %}
                             </ol>
                         </div>
                         <!-- /.col -->

@@ -37,15 +37,16 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primry sc">
+            <div class="card card-primary sc">
                 <div class="card-header">
-                    Patients Details
+                    <h3 class="card-title">Patients Details</h3>
                 </div>
+
                 <table class="table table-bordered table-hover dataTable" id="plist">
                     <thead>
                         <tr>
-                            <th>SL.No</th>
-                            <th>Pic</th>
+                            <th>Sl.No</th>
+                            <th>Image</th>
                             <th>UserName</th>
                             <th>FirstName</th>
                             <th>LastName</th>
@@ -67,8 +68,9 @@
                             <td>{{patient.phone_number}}</td>
                             <td>{{patient.address}}</td>
                             <td><a href="{% url 'edit_patient_clerk' patient.admin.id %}" class="btn btn-sm btn-success">Edit</a>
-                                <a href="{% url 'delete_patient_clerk' patient.id %}" class="btn btn-sm btn-danger">Delete</a></<a>
-                                <a href="{% url 'patient_record_clerk' patient.id %}" class="btn btn-sm btn-warning">View</a></td>
+                                <a href="{% url 'delete_patient_clerk' patient.id %}" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="{% url 'patient_record_clerk' patient.id %}" class="btn btn-sm btn-warning">View</a>
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>

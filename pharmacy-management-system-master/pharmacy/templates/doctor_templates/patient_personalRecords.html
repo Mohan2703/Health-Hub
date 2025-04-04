@@ -1,8 +1,9 @@
-{% extends 'doctor_templates/base_template.html'%}
-{% block link %}
+{% extends 'doctor_templates/base_template.html'%} {% block page_title %}
+<h5>Patient Details</h5>
+{% endblock page_title %} {% block link %}
 <li class="breadcrumb-item active"><a href="{% url 'manage_patient_doctor' %}"> all patients</a></li>
 
-<li class="breadcrumb-item active">Patient</li>
+<li class="breadcrumb-item active" style="color: white;">Patient</li>
 
 {% endblock link%}
 {% block main_content %}
@@ -28,41 +29,40 @@
                         <div class="card-body">
                             <tbody>
                                 <tr>
-                                        <td>User Name: {{patient.admin.username}}</td>
-                                        <br>
-                                        <td>Full Name: {{patient.first_name}}  {{patient.last_name}}</td>
-                                        <br>
-                                        <td>Dob: {{ patient.dob }}</td>
-                                        <br>
-                                        <td>Email: {{ patient.admin.email }}</td>
-                                        <br>
-                                        <!-- <td>Age: {{ patient.age }}</td>
-                                        <br> -->
-                                        <td>Gender: {{ patient.gender }}</td>
-                                        <br>
-                                        <td>Address: {{ patient.address }}</td>
-                                        <br>
-                                        <td>Tel: {{ patient.phone_number }}</td>
-
+                                    <td>User Name: {{patient.admin.username}}</td>
+                                    <br>
+                                    <td>Full Name: {{patient.first_name}}  {{patient.last_name}}</td>
+                                    <br>
+                                    <td>Dob: {{ patient.dob }}</td>
+                                    <br>
+                                    <td>Email: {{ patient.admin.email }}</td>
+                                    <br>
+                                    <!-- <td>Age: {{ patient.age }}</td>
+                                    <br> -->
+                                    <td>Gender: {{ patient.gender }}</td>
+                                    <br>
+                                    <td>Address: {{ patient.address }}</td>
+                                    <br>
+                                    <td>Tel: {{ patient.phone_number }}</td>
                                 </tr>
                             </tbody>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <!-- <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
                              <i class="fa fa-align-justify"></i> Patient's Medical Info
                         </div>
                         
-                        <div class="card-body">
+                        <div class="card-body" style="background-color: black;">
 
                             <h6>Doctor: {{user.first_name}}</h6>
-                            <h6>Date Prescribed: {{prescrip.patient_dispen}} </h6>
-                            
+                            <h6>Date Prescribed: {{prescrip.last_date_precribed}} </h6>
+
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div> 
         </div>
 
