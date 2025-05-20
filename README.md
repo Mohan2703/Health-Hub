@@ -11,7 +11,7 @@
       5. Patient.</p>
 
 <div>
-<img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Admin%20Login.png" width="400" height="200" />
+<img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/HealthHub.png" width="400" height="200" />
 <img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Pharmacist.png" width="400" height="200" />
 </div>
 <div>
