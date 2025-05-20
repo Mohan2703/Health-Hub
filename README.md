@@ -11,13 +11,13 @@
       5. Patient.</p>
 
 <div>
-<img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/HealthHub.png" width="400" height="200" />
-<img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Pharmacist.png" width="400" height="200" />
+<img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/login.png" width="400" height="200" />
+<img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/pharmacist.png" width="400" height="200" />
 </div>
 <div>
-<img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Doctor%20Login.png" width="400" height="200" />
-<img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Receptionist%20Login.png" width="400" height="200" />
-<img src="https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Patient%20login.png" width="400" height="200" />
+<img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/doctor.png" width="400" height="200" />
+<img src="[https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Receptionist%20Login.png](https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/Receptionist%20Login.png)" width="400" height="200" />
+<img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/patient.png" width="400" height="200" />
 </div>
 
 ## Run these Commands in terminal
