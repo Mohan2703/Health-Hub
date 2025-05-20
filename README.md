@@ -7,16 +7,17 @@
       1. Administrator.<br>
       2. Pharmacist.<br>
       3. Doctor.<br>
-      4. Clerk.<br>
+      4. Clerk/Receptionist.<br>
       5. Patient.</p>
 
 <div>
 <img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/login.png" width="400" height="200" />
+<img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/admin.png" width="400" height="200" />
 <img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/pharmacist.png" width="400" height="200" />
 </div>
 <div>
 <img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/doctor.png" width="400" height="200" />
-<img src="[https://github.com/devhasibulislam/pharmacy-management-system/blob/master/screenshot/Receptionist%20Login.png](https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/Receptionist%20Login.png)" width="400" height="200" />
+<img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/receptionist.png" width="400" height="200" />
 <img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/patient.png" width="400" height="200" />
 </div>
 
