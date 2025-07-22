@@ -21,6 +21,8 @@
 <img src="https://github.com/Mohan2703/Health-Hub/blob/main/pharmacy-management-system-master/screenshot/patient.png" width="400" height="200" />
 </div>
 
+## Python Version Required.
+     Any Python 3.8/3.9 versions
 ## Run these Commands in terminal
 ### Step 1
      pip install -r requirements.txt
